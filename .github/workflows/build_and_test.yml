@@ -33,18 +33,18 @@ jobs:
       run: |
         make install-requirement
     - name: Install test dependencies
-        working-directory: my_pkg
-        run: |
-            make install-test-requirement
+      working-directory: my_pkg
+      run: |
+        make install-test-requirement
     - name: Install packages
-        working-directory: my_pkg
-        run: |
-            make install
+      working-directory: my_pkg
+      run: |
+        make install
     - name: Lint
-        working-directory: my_pkg
-        run: |
-            make lint
+      working-directory: my_pkg
+      run: |
+        make lint
     - name: Test
-        working-directory: my_pkg
-        run: |
-            make test
+      working-directory: my_pkg
+      run: |
+        make test
