@@ -14,10 +14,10 @@ if not result:
 version = result.group(1)
 
 with Path("requirements.txt").open("r") as f:
-    requirements = [row.strip() for rwo in f if row.strip()]
+    requirements = [row.strip() for row in f if row.strip()]
 
 with Path("test_requirements.txt").open("r") as f:
-    test_requirements = [row.strip() for rwo in f if row.strip()]
+    test_requirements = [row.strip() for row in f if row.strip()]
 
 setup(
     name=name,
