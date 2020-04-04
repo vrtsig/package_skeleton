@@ -28,14 +28,14 @@ jobs:
     - name: Create new package
       run: |
         cookiecutter --no-input package_skeleton repo_name=my_pkg repo_name=my_pkg package_name=my_pkg
-    - name: Install dependencies
+    - name: Install requirements
       working-directory: my_pkg
       run: |
-        make install-requirement
-    - name: Install test dependencies
+        make install-requirements
+    - name: Install test requirements
       working-directory: my_pkg
       run: |
-        make install-test-requirement
+        make install-test-requirements
     - name: Install packages
       working-directory: my_pkg
       run: |
