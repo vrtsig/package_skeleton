@@ -1,0 +1,50 @@
+name: Create package and test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_and_test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        path: package_skeleton
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install cookiecutter
+      run: |
+        pip install cookiecutter
+    - name: Create new package
+      run: |
+        cookiecutter --no-input package_skeleton repo_name=my_pkg repo_name=my_pkg package_name=my_pkg
+    - name: Install requirements
+      working-directory: my_pkg
+      run: |
+        make install-requirements
+    - name: Install test requirements
+      working-directory: my_pkg
+      run: |
+        make install-test-requirements
+    - name: Install packages
+      working-directory: my_pkg
+      run: |
+        make install
+    - name: Lint
+      working-directory: my_pkg
+      run: |
+        make lint
+    - name: Test
+      working-directory: my_pkg
+      run: |
+        make test
