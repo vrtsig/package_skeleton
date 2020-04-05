@@ -24,7 +24,7 @@ setup(
     version=version,
     description="{{ cookiecutter.description }}",
     url="{{ cookiecutter.url }}",
-    author="Fabian Peters",
+    author="{{ cookiecutter.author }}",
     author_email="",
     packages=find_packages(exclude=["docs*", "tests*", "tools*"]),
     include_package_data=True,

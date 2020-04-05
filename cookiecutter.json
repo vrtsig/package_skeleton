@@ -1,6 +1,7 @@
 {
-    "repo_name": "Repository name",
-    "package_name": "Python package name",
-    "description": "Library description",
-    "url": ""
+    "repo_name": "my_pkg",
+    "package_name": "my_pkg",
+    "description": "My Package",
+    "url": "https://github.com/vrtsig/my_pkg",
+    "author": "Fabian Peters"
 }
