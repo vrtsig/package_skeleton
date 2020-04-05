@@ -27,7 +27,7 @@ jobs:
         pip install cookiecutter
     - name: Create new package
       run: |
-        cookiecutter --no-input package_skeleton repo_name=my_pkg repo_name=my_pkg package_name=my_pkg
+        cookiecutter --no-input package_skeleton
     - name: Install requirements
       working-directory: my_pkg
       run: |
